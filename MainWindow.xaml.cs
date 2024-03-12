@@ -37,10 +37,10 @@ namespace CheckQRCodeGen
 
                 using (MemoryStream memory = new MemoryStream())  // Сохраняем изображение QR-кода в памяти
                 {
-                    qrCodeImage.Save(memory, System.Drawing.Imaging.ImageFormat.Png);
+                    qrCodeImage.Save(memory, System.Drawing.Imaging.ImageFormat.Png); // Сохранение изображения QR-кода в формате PNG
 
                     user.userQRCODE = new BitmapImage();  // Создаем новый объект BitmapImage для хранения изображения QR-кода
-                    user.userQRCODE.BeginInit();
+                    user.userQRCODE.BeginInit(); // Создание нового объекта BitmapImage для пользователя
                     user.userQRCODE.CacheOption = BitmapCacheOption.OnLoad;
                     user.userQRCODE.StreamSource = memory;  // Устанавливаем сохраненное изображение в качестве источника данных для BitmapImage
                     user.userQRCODE.EndInit();  // Завершаем инициализацию объекта BitmapImage
